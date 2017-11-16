@@ -38,33 +38,26 @@
     }
 }
 
-body {
-	background-color: #33DBFF;
-}
 
-h1 {
-	
-	text-align: center;
-	
+
+a {
+	color:#BF4126;
 }
 
 .main {
-	margin: auto;
+	margin:auto;
 	background-color: #FF5733;
-	width: 25%;
-	text-align: center;
+	width: 30%;
 	border: 6px solid #BF4126;
 	border-radius: 7px;
+	margin-top:15%;
 }
 
 .main1 {
 	margin: auto;
 	background-color: #FF5733;
-	width: 50%;
-	text-align: center;
+	width: 60%;
+	
 	
 }
 
-.field {
-	margin: auto;
-}

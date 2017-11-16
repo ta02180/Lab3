@@ -15,7 +15,7 @@ if ($sessionToken != $cookieToken) {
 $wsError = false;
 
 # Specify the url of the web service and initialize
-$url = 'https://402q6w62cj.execute-api.us-east-1.amazonaws.com/prod/getAllLocations';
+$url = '';
 $handle = curl_init($url);
 curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 
@@ -76,39 +76,26 @@ if($httpCode == 200) {
   </div>
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
-	<h2>Welcome</h2>
+	<h2>About Us</h2>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et leo in sem commodo consequat. Suspendisse eu dictum neque, id aliquet mi. Pellentesque auctor commodo dolor, non consectetur magna. Suspendisse potenti. Proin vel tellus in mauris blandit laoreet. Cras sit amet mattis tortor. Vivamus ut felis iaculis sapien auctor vestibulum.
+
+Nulla lacus enim, euismod eget urna non, dictum elementum ipsum. Vivamus erat erat, aliquet vel magna sed, dignissim pretium diam. Etiam lobortis consequat nisl bibendum malesuada. In in interdum turpis. Vestibulum justo libero, accumsan vel sapien sit amet, fermentum porta ipsum. Proin justo ex, eleifend at vehicula sed, efficitur id sapien. Vivamus sagittis justo non eros eleifend, nec tristique sapien tempor. Mauris eu erat vel felis iaculis ullamcorper vitae vitae felis.
+
+Aenean eu condimentum dui. Mauris euismod mollis sodales. In consequat libero nec dolor egestas luctus. Etiam venenatis viverra massa rutrum laoreet. Cras ullamcorper, tellus a hendrerit cursus, felis arcu convallis purus, at egestas diam magna eu tellus. Quisque lacus eros, consectetur mattis nulla a, cursus pulvinar risus. Maecenas eu turpis ipsum. Etiam in quam in dolor consectetur congue. Sed mattis nisl vitae libero semper, id dignissim sem rhoncus. Ut arcu ante, placerat fermentum scelerisque in, sodales at erat. Nullam mollis mattis diam et posuere. Pellentesque interdum sagittis molestie. In nec venenatis mi. Maecenas non ligula hendrerit enim ornare auctor quis iaculis est.
 
 
+</p>
 
-<?php if($wsError) { ?>
-                        Error connecting to web service
-                <?php } else { ?>
-                        <h2>All Locations</h2>
-                        <?php
-                        # This web service returns a list, so...
-                        # Loop thru each item in the list
-                        foreach($items as $item) {
-                                echo "<div>";
-                                echo "<!--". $item['LocationID'] . "-->";
-                                echo '<br>';
-                                echo $item['Location'];
-                                echo '<br>';
-                                echo $item['Temperature'];
-                                echo '<br>';
-                                echo $item['GoodWalkWeather'];
-                                echo '<br>';
-                                echo $item['Date'];
-                                echo '</div>';
-                                echo '<hr>';
-                        }
-                }
-                ?>
 
-				
-				
+<?php
+
+
+?>
+
 	</div>
   </main>
 </div>
-
 </body>
 </html>

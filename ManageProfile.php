@@ -15,7 +15,7 @@ if ($sessionToken != $cookieToken) {
 $wsError = false;
 
 # Specify the url of the web service and initialize
-$url = 'https://402q6w62cj.execute-api.us-east-1.amazonaws.com/prod/getAllLocations';
+$url = '';
 $handle = curl_init($url);
 curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 
@@ -35,7 +35,7 @@ if($httpCode == 200) {
 ?>
 
 <head>
-	<title>Home Page</title>
+	<title>Manage Profile</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -76,39 +76,17 @@ if($httpCode == 200) {
   </div>
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
-	<h2>Welcome</h2>
+	<h2>Manage Profile</h2>
 
 
 
-<?php if($wsError) { ?>
-                        Error connecting to web service
-                <?php } else { ?>
-                        <h2>All Locations</h2>
-                        <?php
-                        # This web service returns a list, so...
-                        # Loop thru each item in the list
-                        foreach($items as $item) {
-                                echo "<div>";
-                                echo "<!--". $item['LocationID'] . "-->";
-                                echo '<br>';
-                                echo $item['Location'];
-                                echo '<br>';
-                                echo $item['Temperature'];
-                                echo '<br>';
-                                echo $item['GoodWalkWeather'];
-                                echo '<br>';
-                                echo $item['Date'];
-                                echo '</div>';
-                                echo '<hr>';
-                        }
-                }
-                ?>
+<?php
 
-				
-				
+
+?>
+
 	</div>
   </main>
 </div>
-
 </body>
 </html>
